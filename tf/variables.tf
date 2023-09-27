@@ -1,9 +1,16 @@
-
+# general variables
 variable "prefix" {
   description = "Prefix that will be added to all taggable resources"
   default     = "hsm-lab"
 }
 
+variable "instruqt-mode" {
+  description = "determine where the tf code is run."
+  type        = bool
+  default     = true
+}
+
+# aws variables
 variable "subnet_prefix_a" {
   description = "The address prefix to use for the subnet in availability zone a"
   default     = "10.0.1.0/24"

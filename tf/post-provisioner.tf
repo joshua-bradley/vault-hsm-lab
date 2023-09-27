@@ -79,6 +79,7 @@ resource "null_resource" "client-nodes" {
   provisioner "local-exec" {
     command = "chmod +x save_output.sh && ./save_output.sh"
     environment = {
+      INSTRUQT_MODE  = var.instruqt-mode
       HSM_CLUSTER_ID = aws_cloudhsm_v2_cluster.cloudhsm_v2_cluster.cluster_id,
       RDS_ENDPOINT   = aws_db_instance.vault.endpoint,
       VAULT_ENT_IP   = aws_eip.vault-ent.public_ip,
